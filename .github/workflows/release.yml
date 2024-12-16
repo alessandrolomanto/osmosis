@@ -29,6 +29,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           S3_ENDPOINT: ${{ secrets.S3_ENDPOINT }}
+          COSMWASM_VERSION: ${{ env.COSMWASM_VERSION }}
       - name: 🧹 Clean release folder
         run: |
           sudo rm -rf dist
