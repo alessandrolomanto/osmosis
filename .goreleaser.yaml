@@ -93,6 +93,7 @@ blobs:
     bucket: osmosis
     directory: "binaries/v{{.Version}}"
     endpoint: '{{ .Env.S3_ENDPOINT }}' 
+    region: fra1
     ids:
       - zipped
       - binaries
