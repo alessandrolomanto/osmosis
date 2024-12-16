@@ -91,13 +91,13 @@ checksum:
 blobs:
   - provider: s3
     bucket: osmosis
-    directory: "binaries/{{.Version}}"
+    directory: "binaries/v{{.Version}}"
     endpoint: '{{ .Env.S3_ENDPOINT }}' 
     ids:
       - zipped
       - binaries
     extra_files:
-      - glob: ./sha256sum.txt
+      - glob: sha256sum.txt
 
 # Docs: https://goreleaser.com/customization/changelog/
 changelog:
