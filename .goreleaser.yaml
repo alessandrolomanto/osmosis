@@ -88,6 +88,17 @@ checksum:
   name_template: "sha256sum.txt"
   algorithm: sha256
 
+blobs:
+  - provider: s3
+    bucket: osmosis
+    directory: "binaries/{{.Version}}"
+    endpoint: '{{ .Env.S3_ENDPOINT }}' 
+    ids:
+      - zipped
+      - binaries
+    extra_files:
+      - glob: ./sha256sum.txt
+
 # Docs: https://goreleaser.com/customization/changelog/
 changelog:
   disable: true
